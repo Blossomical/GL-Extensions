@@ -1,6 +1,6 @@
 package gl;
 
-import gl.ExtensionsNative;
+import gl.native.ExtensionsNative;
 import lime.utils.DataPointer;
 #if !macro
 import cpp.Char;
