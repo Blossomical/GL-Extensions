@@ -1,0 +1,21 @@
+{
+    "name": "gl-extensions",
+    "url": "https://github.com/Blossomical/GL-Extensions",
+    "license": "MIT",
+    "tags": [
+        "lime",
+        "opengl",
+        "extensions"
+    ],
+    "description": "GL extensions for LIME",
+    "version": "1.0.0",
+    "releasenote": "First release",
+    "contributors": [
+        "Blossomical"
+    ],
+    "dependencies": {
+        "lime": "",
+        "hxcpp": ""
+    },
+    "classPath": "src"
+}
