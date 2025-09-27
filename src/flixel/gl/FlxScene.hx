@@ -9,6 +9,7 @@ import lime.graphics.opengl.GLRenderbuffer;
 import lime.graphics.opengl.GLShader;
 import lime.graphics.opengl.GLTexture;
 import lime.utils.UInt8Array;
+import gl.Program;
 
 // experimental, renders gl directly into an FlxSprite
 class FlxScene extends FlxSprite {
