@@ -8,9 +8,10 @@ import haxe.macro.Expr;
 import lime.utils.DataPointer;
 import sys.io.File;
 #if !macro
+#if cpp
 import cpp.Char;
 import cpp.Pointer;
-
+#end
 using StringTools;
 
 // class ExtensionsMacro {
