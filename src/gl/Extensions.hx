@@ -3,9 +3,10 @@ package gl;
 import gl.native.ExtensionsNative;
 import lime.utils.DataPointer;
 #if !macro
+#if cpp
 import cpp.Char;
 import cpp.Pointer;
-
+#end
 // #if !macro
 // @:build(gl.ExtensionsNative.ExtensionsMacro.build(false))
 // #end
