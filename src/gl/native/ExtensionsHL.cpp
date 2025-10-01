@@ -2376,7 +2376,7 @@ DEFGL_HL(void, ShaderOp1EXT, (GLenum, GLuint, GLuint), (int op, int res, int arg
 DEFGL_HL(void, ShaderOp2EXT, (GLenum, GLuint, GLuint, GLuint), (int op, int res, int arg1, int arg2), (op, res, arg1, arg2))
 DEFGL_HL(void, ShaderOp3EXT, (GLenum, GLuint, GLuint, GLuint, GLuint), (int op, int res, int arg1, int arg2, int arg3), (op, res, arg1, arg2, arg3))
 DEFGL_HL(void, ShaderSource, (GLuint, GLsizei, const GLchar *const *, const GLint *), (int shader, int count, vstring *string, double length), (shader, count, (GLchar **)&(string->bytes), (GLint *)(uintptr_t)length))
-DEFGL_HL(void, ShaderSourceARB, (GLhandleARB, GLsizei, const GLcharARB **, const GLint *), (int shaderObj, int count, vstring *string, double length), (shaderObj, count, (GLchar **)&(string->bytes), (GLint *)(uintptr_t)length))
+DEFGL_HL(void, ShaderSourceARB, (GLhandleARB, GLsizei, const GLcharARB **, const GLint *), (int shaderObj, int count, vstring *string, double length), (shaderObj, count, (GLcharARB **)&(string->bytes), (GLint *)(uintptr_t)length))
 DEFGL_HL(void, ShaderStorageBlockBinding, (GLuint, GLuint, GLuint), (int program, int storageBlockIndex, int storageBlockBinding), (program, storageBlockIndex, storageBlockBinding))
 DEFGL_HL(void, ShadingRateEXT, (GLenum), (int rate), (rate))
 DEFGL_HL(void, ShadingRateCombinerOpsEXT, (GLenum, GLenum), (int combinerOp0, int combinerOp1), (combinerOp0, combinerOp1))

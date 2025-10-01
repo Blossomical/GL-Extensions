@@ -198,6 +198,7 @@ static void *getProc(const char *name)
 #endif
 }
 
+#undef HL_NAME
 #define STRFY(x) #x
 #define HL_NAME(n) glExtensions__##n
 #if defined(__APPLE__)
