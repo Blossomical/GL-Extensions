@@ -14,6 +14,7 @@
 #include <cstddef>
 #include <functional>
 #include <hxcpp.h>
+#include <hl.h>
 
 #pragma comment(lib, "opengl32.lib")
 
@@ -198,6 +199,7 @@ static void *getProc(const char *name)
 }
 
 #define STRFY(x) #x
+#define HL_NAME(n) glExtensions__##n
 #if defined(__APPLE__)
 
 #define DEFGL(type, name, glArgs, funcArgs, callArgs) \
@@ -206,6 +208,11 @@ static void *getProc(const char *name)
         return (type)gl##name callArgs;               \
     }
 
+#define DEFGL_HL(type, name, glArgs, funcArgs, callArgs) \
+    HL_PRIM type HL_NAME(name) funcArgs                  \
+    {                                                    \
+        return (type)gl##name callArgs;                  \
+    }
 #else
 
 #define DEFGL(type, name, glArgs, funcArgs, callArgs)                         \
@@ -215,6 +222,12 @@ static void *getProc(const char *name)
         name##__TYPEDEF gl##name = (name##__TYPEDEF)getProc(STRFY(gl##name)); \
         return (type)gl##name callArgs;                                       \
     }
-#endif
 
-// no hashlink support :(
+#define DEFGL_HL(type, name, glArgs, funcArgs, callArgs)                      \
+    typedef type(APIENTRY *name##__TYPEDEF) glArgs;                           \
+    HL_PRIM type HL_NAME(name) funcArgs                                       \
+    {                                                                         \
+        name##__TYPEDEF gl##name = (name##__TYPEDEF)getProc(STRFY(gl##name)); \
+        return (type)gl##name callArgs;                                       \
+    }
+#endif

@@ -1,0 +1,39 @@
+<xml>
+    <pragma once="true" />
+
+    <cppflag value="HASHLINK" />
+
+    <set name="PROJECT_DIR" value="${haxelib:gl-extensions}/src" />
+    <set name="HL_INCLUDE" value="${HASHLINK}/include" />
+    <set name="HL_BIN" value="${HASHLINK}" />
+
+    <echo value="hashlink: ${HASHLINK}" />
+    <echo value="hashlink include: ${HL_INCLUDE}" />
+    <echo value="hashlink bin: ${HL_BIN}" />
+
+    <set name="glExtensions___folder" value="${PROJECT_DIR}/gl/native" />
+
+    <files id="__main__">
+        <compilerflag value="-I${glExtensions___folder}" />
+    </files>
+
+    <files id="haxe">
+        <compilerflag value="-I${glExtensions___folder}" />
+    </files>
+
+    <files id="glExtensions__">
+        <compilerflag value="-I${glExtensions___folder}" />
+        <file name="${glExtensions___folder}/ExtensionsHL.cpp" />
+        <compilerflag value="-I${HASHLINK}/include" />
+    </files>
+
+    <target id="default" output="glExtensions__" toolid="dll" tool="linker">
+        <files id="glExtensions__" />
+        <libpath name="${HASHLINK}" if="windows" />
+        <libpath name="/usr/local/lib" if='macos' />
+        <lib name="libhl.lib" if="windows" />
+        <lib name="-lhl" unless="windows" />
+        <ext value=".hdll" />
+        <outdir name="${this_dir}/export/bin"/>
+    </target>
+</xml>

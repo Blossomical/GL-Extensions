@@ -1,0 +1,21 @@
+<xml>
+	<pragma once="true" />
+	<set name="extensions_folder" value="${haxelib:gl-extensions}/src/gl/native" />
+
+	<files id="__main__">
+		<compilerflag value="-I${extensions_folder}" />
+	</files>
+
+	<files id="haxe">
+		<compilerflag value="-I${extensions_folder}" />
+	</files>
+
+	<files id="gl-extensions">
+		<compilerflag value="-I${extensions_folder}" />
+		<file name="${extensions_folder}/Extensions.cpp" />
+	</files>
+
+	<target id="haxe">
+		<files id="gl-extensions" />
+	</target>
+</xml>
