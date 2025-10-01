@@ -3,10 +3,7 @@ package gl;
 import gl.native.ExtensionsNative;
 import lime.utils.DataPointer;
 #if !macro
-#if cpp
-import cpp.Char;
-import cpp.Pointer;
-#end
+import gl.CharPointer;
 // #if !macro
 // @:build(gl.ExtensionsNative.ExtensionsMacro.build(false))
 // #end
@@ -4614,7 +4611,7 @@ class Extensions {
     static function extGetBufferPointervQCOM(target:Int, params:DataPointer):Void return ExtensionsNative.extGetBufferPointervQCOM(target, params);
     static function extGetBuffersQCOM(buffers:DataPointer, maxBuffers:Int, numBuffers:DataPointer):Void return ExtensionsNative.extGetBuffersQCOM(buffers, maxBuffers, numBuffers);
     static function extGetFramebuffersQCOM(framebuffers:DataPointer, maxFramebuffers:Int, numFramebuffers:DataPointer):Void return ExtensionsNative.extGetFramebuffersQCOM(framebuffers, maxFramebuffers, numFramebuffers);
-    static function extGetProgramBinarySourceQCOM(program:Int, shadertype:Int, source:Pointer<Char>, length:DataPointer):Void return ExtensionsNative.extGetProgramBinarySourceQCOM(program, shadertype, source, length);
+    static function extGetProgramBinarySourceQCOM(program:Int, shadertype:Int, source:CharPointer, length:DataPointer):Void return ExtensionsNative.extGetProgramBinarySourceQCOM(program, shadertype, source, length);
     static function extGetProgramsQCOM(programs:DataPointer, maxPrograms:Int, numPrograms:DataPointer):Void return ExtensionsNative.extGetProgramsQCOM(programs, maxPrograms, numPrograms);
     static function extGetRenderbuffersQCOM(renderbuffers:DataPointer, maxRenderbuffers:Int, numRenderbuffers:DataPointer):Void return ExtensionsNative.extGetRenderbuffersQCOM(renderbuffers, maxRenderbuffers, numRenderbuffers);
     static function extGetShadersQCOM(shaders:DataPointer, maxShaders:Int, numShaders:DataPointer):Void return ExtensionsNative.extGetShadersQCOM(shaders, maxShaders, numShaders);
@@ -5397,8 +5394,8 @@ class Extensions {
     * @see **`glBindAttribLocation`**, **`glLinkProgram`**, **`glVertexAttrib`**, **`glVertexAttribPointer`**
 
     **/
-    static function getActiveAttrib(program:Int, in_dex:Int, bufSize:Int, length:DataPointer, size:DataPointer, type:DataPointer, name:Pointer<Char>):Void return ExtensionsNative.getActiveAttrib(program, in_dex, bufSize, length, size, type, name);
-    static function getActiveAttribARB(programObj:Int, in_dex:Int, maxLength:Int, length:DataPointer, size:DataPointer, type:DataPointer, name:Pointer<Char>):Void return ExtensionsNative.getActiveAttribARB(programObj, in_dex, maxLength, length, size, type, name);
+    static function getActiveAttrib(program:Int, in_dex:Int, bufSize:Int, length:DataPointer, size:DataPointer, type:DataPointer, name:CharPointer):Void return ExtensionsNative.getActiveAttrib(program, in_dex, bufSize, length, size, type, name);
+    static function getActiveAttribARB(programObj:Int, in_dex:Int, maxLength:Int, length:DataPointer, size:DataPointer, type:DataPointer, name:CharPointer):Void return ExtensionsNative.getActiveAttribARB(programObj, in_dex, maxLength, length, size, type, name);
     /**
     * - #### Purpose:
     * query the name of an active shader subroutine
@@ -5425,7 +5422,7 @@ class Extensions {
     * @see **`glGetSubroutineIndex`**, **`glGetActiveSubroutineUniform`**, **`glGetProgramStage`**
 
     **/
-    static function getActiveSubroutineName(program:Int, shadertype:Int, in_dex:Int, bufSize:Int, length:DataPointer, name:Pointer<Char>):Void return ExtensionsNative.getActiveSubroutineName(program, shadertype, in_dex, bufSize, length, name);
+    static function getActiveSubroutineName(program:Int, shadertype:Int, in_dex:Int, bufSize:Int, length:DataPointer, name:CharPointer):Void return ExtensionsNative.getActiveSubroutineName(program, shadertype, in_dex, bufSize, length, name);
     /**
     * - #### Purpose:
     * query the name of an active shader subroutine uniform
@@ -5454,7 +5451,7 @@ class Extensions {
     * @see **`glGetSubroutineIndex`**, **`glGetActiveSubroutineUniform`**, **`glGetProgramStage`**
 
     **/
-    static function getActiveSubroutineUniformName(program:Int, shadertype:Int, in_dex:Int, bufSize:Int, length:DataPointer, name:Pointer<Char>):Void return ExtensionsNative.getActiveSubroutineUniformName(program, shadertype, in_dex, bufSize, length, name);
+    static function getActiveSubroutineUniformName(program:Int, shadertype:Int, in_dex:Int, bufSize:Int, length:DataPointer, name:CharPointer):Void return ExtensionsNative.getActiveSubroutineUniformName(program, shadertype, in_dex, bufSize, length, name);
     static function getActiveSubroutineUniformiv(program:Int, shadertype:Int, in_dex:Int, pname:Int, values:DataPointer):Void return ExtensionsNative.getActiveSubroutineUniformiv(program, shadertype, in_dex, pname, values);
     /**
     * - #### Purpose:
@@ -5507,8 +5504,8 @@ class Extensions {
     * @see **`glGetUniform`**, **`glGetUniformLocation`**, **`glLinkProgram`**, **`glUniform`**, **`glUseProgram`**
 
     **/
-    static function getActiveUniform(program:Int, in_dex:Int, bufSize:Int, length:DataPointer, size:DataPointer, type:DataPointer, name:Pointer<Char>):Void return ExtensionsNative.getActiveUniform(program, in_dex, bufSize, length, size, type, name);
-    static function getActiveUniformARB(programObj:Int, in_dex:Int, maxLength:Int, length:DataPointer, size:DataPointer, type:DataPointer, name:Pointer<Char>):Void return ExtensionsNative.getActiveUniformARB(programObj, in_dex, maxLength, length, size, type, name);
+    static function getActiveUniform(program:Int, in_dex:Int, bufSize:Int, length:DataPointer, size:DataPointer, type:DataPointer, name:CharPointer):Void return ExtensionsNative.getActiveUniform(program, in_dex, bufSize, length, size, type, name);
+    static function getActiveUniformARB(programObj:Int, in_dex:Int, maxLength:Int, length:DataPointer, size:DataPointer, type:DataPointer, name:CharPointer):Void return ExtensionsNative.getActiveUniformARB(programObj, in_dex, maxLength, length, size, type, name);
     /**
     * - #### Purpose:
     * retrieve the name of an active uniform block
@@ -5544,7 +5541,7 @@ class Extensions {
     * @see **`glGetActiveUniformBlock`**, **`glGetUniformBlockIndex`**
 
     **/
-    static function getActiveUniformBlockName(program:Int, uniformBlockIndex:Int, bufSize:Int, length:DataPointer, uniformBlockName:Pointer<Char>):Void return ExtensionsNative.getActiveUniformBlockName(program, uniformBlockIndex, bufSize, length, uniformBlockName);
+    static function getActiveUniformBlockName(program:Int, uniformBlockIndex:Int, bufSize:Int, length:DataPointer, uniformBlockName:CharPointer):Void return ExtensionsNative.getActiveUniformBlockName(program, uniformBlockIndex, bufSize, length, uniformBlockName);
     static function getActiveUniformBlockiv(program:Int, uniformBlockIndex:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getActiveUniformBlockiv(program, uniformBlockIndex, pname, params);
     /**
     * - #### Purpose:
@@ -5577,7 +5574,7 @@ class Extensions {
     * @see **`glGetActiveUniform`**, **`glGetUniformIndices`**, **`glGetProgram`**, **`glLinkProgram`**
 
     **/
-    static function getActiveUniformName(program:Int, uniformIndex:Int, bufSize:Int, length:DataPointer, uniformName:Pointer<Char>):Void return ExtensionsNative.getActiveUniformName(program, uniformIndex, bufSize, length, uniformName);
+    static function getActiveUniformName(program:Int, uniformIndex:Int, bufSize:Int, length:DataPointer, uniformName:CharPointer):Void return ExtensionsNative.getActiveUniformName(program, uniformIndex, bufSize, length, uniformName);
     /**
     * - #### Purpose:
     * Returns information about several active uniform variables for the specified program object
@@ -5628,7 +5625,7 @@ class Extensions {
 
     **/
     static function getActiveUniformsiv(program:Int, uniformCount:Int, uniformIndices:DataPointer, pname:Int, params:DataPointer):Void return ExtensionsNative.getActiveUniformsiv(program, uniformCount, uniformIndices, pname, params);
-    static function getActiveVaryingNV(program:Int, in_dex:Int, bufSize:Int, length:DataPointer, size:DataPointer, type:DataPointer, name:Pointer<Char>):Void return ExtensionsNative.getActiveVaryingNV(program, in_dex, bufSize, length, size, type, name);
+    static function getActiveVaryingNV(program:Int, in_dex:Int, bufSize:Int, length:DataPointer, size:DataPointer, type:DataPointer, name:CharPointer):Void return ExtensionsNative.getActiveVaryingNV(program, in_dex, bufSize, length, size, type, name);
     static function getArrayObjectfvATI(array:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getArrayObjectfvATI(array, pname, params);
     static function getArrayObjectivATI(array:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getArrayObjectivATI(array, pname, params);
     static function getAttachedObjectsARB(contain_erObj:Int, maxCount:Int, count:DataPointer, obj:DataPointer):Void return ExtensionsNative.getAttachedObjectsARB(contain_erObj, maxCount, count, obj);
@@ -5920,16 +5917,16 @@ class Extensions {
     * @see **`glDebugMessageInsert`**, **`glDebugMessageCallback`**, **`glDebugMessageControl`**.
 
     **/
-    static function getDebugMessageLog(count:Int, bufSize:Int, sources:DataPointer, types:DataPointer, ids:DataPointer, severities:DataPointer, lengths:DataPointer, messageLog:Pointer<Char>):Int return ExtensionsNative.getDebugMessageLog(count, bufSize, sources, types, ids, severities, lengths, messageLog);
-    static function getDebugMessageLogAMD(count:Int, bufSize:Int, categories:DataPointer, severities:DataPointer, ids:DataPointer, lengths:DataPointer, message:Pointer<Char>):Int return ExtensionsNative.getDebugMessageLogAMD(count, bufSize, categories, severities, ids, lengths, message);
-    static function getDebugMessageLogARB(count:Int, bufSize:Int, sources:DataPointer, types:DataPointer, ids:DataPointer, severities:DataPointer, lengths:DataPointer, messageLog:Pointer<Char>):Int return ExtensionsNative.getDebugMessageLogARB(count, bufSize, sources, types, ids, severities, lengths, messageLog);
-    static function getDebugMessageLogKHR(count:Int, bufSize:Int, sources:DataPointer, types:DataPointer, ids:DataPointer, severities:DataPointer, lengths:DataPointer, messageLog:Pointer<Char>):Int return ExtensionsNative.getDebugMessageLogKHR(count, bufSize, sources, types, ids, severities, lengths, messageLog);
+    static function getDebugMessageLog(count:Int, bufSize:Int, sources:DataPointer, types:DataPointer, ids:DataPointer, severities:DataPointer, lengths:DataPointer, messageLog:CharPointer):Int return ExtensionsNative.getDebugMessageLog(count, bufSize, sources, types, ids, severities, lengths, messageLog);
+    static function getDebugMessageLogAMD(count:Int, bufSize:Int, categories:DataPointer, severities:DataPointer, ids:DataPointer, lengths:DataPointer, message:CharPointer):Int return ExtensionsNative.getDebugMessageLogAMD(count, bufSize, categories, severities, ids, lengths, message);
+    static function getDebugMessageLogARB(count:Int, bufSize:Int, sources:DataPointer, types:DataPointer, ids:DataPointer, severities:DataPointer, lengths:DataPointer, messageLog:CharPointer):Int return ExtensionsNative.getDebugMessageLogARB(count, bufSize, sources, types, ids, severities, lengths, messageLog);
+    static function getDebugMessageLogKHR(count:Int, bufSize:Int, sources:DataPointer, types:DataPointer, ids:DataPointer, severities:DataPointer, lengths:DataPointer, messageLog:CharPointer):Int return ExtensionsNative.getDebugMessageLogKHR(count, bufSize, sources, types, ids, severities, lengths, messageLog);
     static function getDetailTexFuncSGIS(target:Int, poin_ts:DataPointer):Void return ExtensionsNative.getDetailTexFuncSGIS(target, poin_ts);
     static function getDoubleIndexedvEXT(target:Int, in_dex:Int, data:DataPointer):Void return ExtensionsNative.getDoubleIndexedvEXT(target, in_dex, data);
     static function getDoublei_v(target:Int, in_dex:Int, data:DataPointer):Void return ExtensionsNative.getDoublei_v(target, in_dex, data);
     static function getDoublei_vEXT(pname:Int, in_dex:Int, params:DataPointer):Void return ExtensionsNative.getDoublei_vEXT(pname, in_dex, params);
     static function getDoublev(pname:Int, data:DataPointer):Void return ExtensionsNative.getDoublev(pname, data);
-    static function getDriverControlStringQCOM(driverControl:Int, bufSize:Int, length:DataPointer, driverControlStrin_g:Pointer<Char>):Void return ExtensionsNative.getDriverControlStringQCOM(driverControl, bufSize, length, driverControlStrin_g);
+    static function getDriverControlStringQCOM(driverControl:Int, bufSize:Int, length:DataPointer, driverControlStrin_g:CharPointer):Void return ExtensionsNative.getDriverControlStringQCOM(driverControl, bufSize, length, driverControlStrin_g);
     static function getDriverControlsQCOM(num:DataPointer, size:Int, driverControls:DataPointer):Void return ExtensionsNative.getDriverControlsQCOM(num, size, driverControls);
     /**
     * - #### Purpose:
@@ -6087,7 +6084,7 @@ class Extensions {
     static function getImageHandleNV(texture:Int, level:Int, layered:Bool, layer:Int, format:Int):Int return ExtensionsNative.getImageHandleNV(texture, level, layered, layer, format);
     static function getImageTransformParameterfvHP(target:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getImageTransformParameterfvHP(target, pname, params);
     static function getImageTransformParameterivHP(target:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getImageTransformParameterivHP(target, pname, params);
-    static function getInfoLogARB(obj:Int, maxLength:Int, length:DataPointer, in_foLog:Pointer<Char>):Void return ExtensionsNative.getInfoLogARB(obj, maxLength, length, in_foLog);
+    static function getInfoLogARB(obj:Int, maxLength:Int, length:DataPointer, in_foLog:CharPointer):Void return ExtensionsNative.getInfoLogARB(obj, maxLength, length, in_foLog);
     static function getInstrumentsSGIX():Int return ExtensionsNative.getInstrumentsSGIX();
     static function getInteger64i_v(target:Int, in_dex:Int, data:DataPointer):Void return ExtensionsNative.getInteger64i_v(target, in_dex, data);
     static function getInteger64v(pname:Int, data:DataPointer):Void return ExtensionsNative.getInteger64v(pname, data);
@@ -6172,7 +6169,7 @@ class Extensions {
     static function getNamedProgramivEXT(program:Int, target:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getNamedProgramivEXT(program, target, pname, params);
     static function getNamedRenderbufferParameteriv(renderbuffer:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getNamedRenderbufferParameteriv(renderbuffer, pname, params);
     static function getNamedRenderbufferParameterivEXT(renderbuffer:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getNamedRenderbufferParameterivEXT(renderbuffer, pname, params);
-    static function getNamedStringARB(namelen:Int, name:String, bufSize:Int, strin_glen:DataPointer, strin_g:Pointer<Char>):Void return ExtensionsNative.getNamedStringARB(namelen, name, bufSize, strin_glen, strin_g);
+    static function getNamedStringARB(namelen:Int, name:String, bufSize:Int, strin_glen:DataPointer, strin_g:CharPointer):Void return ExtensionsNative.getNamedStringARB(namelen, name, bufSize, strin_glen, strin_g);
     static function getNamedStringivARB(namelen:Int, name:String, pname:Int, params:DataPointer):Void return ExtensionsNative.getNamedStringivARB(namelen, name, pname, params);
     static function getNextPerfQueryIdINTEL(queryId:Int, nextQueryId:DataPointer):Void return ExtensionsNative.getNextPerfQueryIdINTEL(queryId, nextQueryId);
     static function getObjectBufferfvATI(buffer:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getObjectBufferfvATI(buffer, pname, params);
@@ -6206,9 +6203,9 @@ class Extensions {
     * @see **`glPushDebugGroup`**, **`glPopDebugGroup`**, **`glObjectLabel`**, **`glGetObjectPtrLabel`**.
 
     **/
-    static function getObjectLabel(identifier:Int, name:Int, bufSize:Int, length:DataPointer, label:Pointer<Char>):Void return ExtensionsNative.getObjectLabel(identifier, name, bufSize, length, label);
-    static function getObjectLabelEXT(type:Int, object:Int, bufSize:Int, length:DataPointer, label:Pointer<Char>):Void return ExtensionsNative.getObjectLabelEXT(type, object, bufSize, length, label);
-    static function getObjectLabelKHR(identifier:Int, name:Int, bufSize:Int, length:DataPointer, label:Pointer<Char>):Void return ExtensionsNative.getObjectLabelKHR(identifier, name, bufSize, length, label);
+    static function getObjectLabel(identifier:Int, name:Int, bufSize:Int, length:DataPointer, label:CharPointer):Void return ExtensionsNative.getObjectLabel(identifier, name, bufSize, length, label);
+    static function getObjectLabelEXT(type:Int, object:Int, bufSize:Int, length:DataPointer, label:CharPointer):Void return ExtensionsNative.getObjectLabelEXT(type, object, bufSize, length, label);
+    static function getObjectLabelKHR(identifier:Int, name:Int, bufSize:Int, length:DataPointer, label:CharPointer):Void return ExtensionsNative.getObjectLabelKHR(identifier, name, bufSize, length, label);
     static function getObjectParameterfvARB(obj:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getObjectParameterfvARB(obj, pname, params);
     static function getObjectParameterivAPPLE(objectType:Int, name:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getObjectParameterivAPPLE(objectType, name, pname, params);
     static function getObjectParameterivARB(obj:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getObjectParameterivARB(obj, pname, params);
@@ -6240,8 +6237,8 @@ class Extensions {
     * @see **`glPushDebugGroup`**, **`glPopDebugGroup`**, **`glObjectLabel`**, **`glGetObjectLabel`**.
 
     **/
-    static function getObjectPtrLabel(ptr:DataPointer, bufSize:Int, length:DataPointer, label:Pointer<Char>):Void return ExtensionsNative.getObjectPtrLabel(ptr, bufSize, length, label);
-    static function getObjectPtrLabelKHR(ptr:DataPointer, bufSize:Int, length:DataPointer, label:Pointer<Char>):Void return ExtensionsNative.getObjectPtrLabelKHR(ptr, bufSize, length, label);
+    static function getObjectPtrLabel(ptr:DataPointer, bufSize:Int, length:DataPointer, label:CharPointer):Void return ExtensionsNative.getObjectPtrLabel(ptr, bufSize, length, label);
+    static function getObjectPtrLabelKHR(ptr:DataPointer, bufSize:Int, length:DataPointer, label:CharPointer):Void return ExtensionsNative.getObjectPtrLabelKHR(ptr, bufSize, length, label);
     static function getOcclusionQueryivNV(id:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getOcclusionQueryivNV(id, pname, params);
     static function getOcclusionQueryuivNV(id:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getOcclusionQueryuivNV(id, pname, params);
     static function getPathColorGenfvNV(color:Int, pname:Int, value:DataPointer):Void return ExtensionsNative.getPathColorGenfvNV(color, pname, value);
@@ -6257,16 +6254,16 @@ class Extensions {
     static function getPathSpacingNV(pathListMode:Int, numPaths:Int, pathNameType:Int, paths:DataPointer, pathBase:Int, advanceScale:Float, kernin_gScale:Float, transformType:Int, returnedSpacin_g:DataPointer):Void return ExtensionsNative.getPathSpacingNV(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kernin_gScale, transformType, returnedSpacin_g);
     static function getPathTexGenfvNV(texCoordSet:Int, pname:Int, value:DataPointer):Void return ExtensionsNative.getPathTexGenfvNV(texCoordSet, pname, value);
     static function getPathTexGenivNV(texCoordSet:Int, pname:Int, value:DataPointer):Void return ExtensionsNative.getPathTexGenivNV(texCoordSet, pname, value);
-    static function getPerfCounterInfoINTEL(queryId:Int, counterId:Int, counterNameLength:Int, counterName:Pointer<Char>, counterDescLength:Int, counterDesc:Pointer<Char>, counterOffset:DataPointer, counterDataSize:DataPointer, counterTypeEnum:DataPointer, counterDataTypeEnum:DataPointer, rawCounterMaxValue:DataPointer):Void return ExtensionsNative.getPerfCounterInfoINTEL(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+    static function getPerfCounterInfoINTEL(queryId:Int, counterId:Int, counterNameLength:Int, counterName:CharPointer, counterDescLength:Int, counterDesc:CharPointer, counterOffset:DataPointer, counterDataSize:DataPointer, counterTypeEnum:DataPointer, counterDataTypeEnum:DataPointer, rawCounterMaxValue:DataPointer):Void return ExtensionsNative.getPerfCounterInfoINTEL(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
     static function getPerfMonitorCounterDataAMD(monitor:Int, pname:Int, dataSize:Int, data:DataPointer, bytesWritten:DataPointer):Void return ExtensionsNative.getPerfMonitorCounterDataAMD(monitor, pname, dataSize, data, bytesWritten);
     static function getPerfMonitorCounterInfoAMD(group:Int, counter:Int, pname:Int, data:DataPointer):Void return ExtensionsNative.getPerfMonitorCounterInfoAMD(group, counter, pname, data);
-    static function getPerfMonitorCounterStringAMD(group:Int, counter:Int, bufSize:Int, length:DataPointer, counterStrin_g:Pointer<Char>):Void return ExtensionsNative.getPerfMonitorCounterStringAMD(group, counter, bufSize, length, counterStrin_g);
+    static function getPerfMonitorCounterStringAMD(group:Int, counter:Int, bufSize:Int, length:DataPointer, counterStrin_g:CharPointer):Void return ExtensionsNative.getPerfMonitorCounterStringAMD(group, counter, bufSize, length, counterStrin_g);
     static function getPerfMonitorCountersAMD(group:Int, numCounters:DataPointer, maxActiveCounters:DataPointer, counterSize:Int, counters:DataPointer):Void return ExtensionsNative.getPerfMonitorCountersAMD(group, numCounters, maxActiveCounters, counterSize, counters);
-    static function getPerfMonitorGroupStringAMD(group:Int, bufSize:Int, length:DataPointer, groupStrin_g:Pointer<Char>):Void return ExtensionsNative.getPerfMonitorGroupStringAMD(group, bufSize, length, groupStrin_g);
+    static function getPerfMonitorGroupStringAMD(group:Int, bufSize:Int, length:DataPointer, groupStrin_g:CharPointer):Void return ExtensionsNative.getPerfMonitorGroupStringAMD(group, bufSize, length, groupStrin_g);
     static function getPerfMonitorGroupsAMD(numGroups:DataPointer, groupsSize:Int, groups:DataPointer):Void return ExtensionsNative.getPerfMonitorGroupsAMD(numGroups, groupsSize, groups);
     static function getPerfQueryDataINTEL(queryHandle:Int, flags:Int, dataSize:Int, data:DataPointer, bytesWritten:DataPointer):Void return ExtensionsNative.getPerfQueryDataINTEL(queryHandle, flags, dataSize, data, bytesWritten);
-    static function getPerfQueryIdByNameINTEL(queryName:Pointer<Char>, queryId:DataPointer):Void return ExtensionsNative.getPerfQueryIdByNameINTEL(queryName, queryId);
-    static function getPerfQueryInfoINTEL(queryId:Int, queryNameLength:Int, queryName:Pointer<Char>, dataSize:DataPointer, noCounters:DataPointer, noInstances:DataPointer, capsMask:DataPointer):Void return ExtensionsNative.getPerfQueryInfoINTEL(queryId, queryNameLength, queryName, dataSize, noCounters, noInstances, capsMask);
+    static function getPerfQueryIdByNameINTEL(queryName:CharPointer, queryId:DataPointer):Void return ExtensionsNative.getPerfQueryIdByNameINTEL(queryName, queryId);
+    static function getPerfQueryInfoINTEL(queryId:Int, queryNameLength:Int, queryName:CharPointer, dataSize:DataPointer, noCounters:DataPointer, noInstances:DataPointer, capsMask:DataPointer):Void return ExtensionsNative.getPerfQueryInfoINTEL(queryId, queryNameLength, queryName, dataSize, noCounters, noInstances, capsMask);
     static function getPixelMapfv(map:Int, values:DataPointer):Void return ExtensionsNative.getPixelMapfv(map, values);
     static function getPixelMapuiv(map:Int, values:DataPointer):Void return ExtensionsNative.getPixelMapuiv(map, values);
     static function getPixelMapusv(map:Int, values:DataPointer):Void return ExtensionsNative.getPixelMapusv(map, values);
@@ -6366,7 +6363,7 @@ class Extensions {
     * @see **`glCompileShader`**, **`glGetShaderInfoLog`**, **`glLinkProgram`**, **`glValidateProgram`**
 
     **/
-    static function getProgramInfoLog(program:Int, bufSize:Int, length:DataPointer, in_foLog:Pointer<Char>):Void return ExtensionsNative.getProgramInfoLog(program, bufSize, length, in_foLog);
+    static function getProgramInfoLog(program:Int, bufSize:Int, length:DataPointer, in_foLog:CharPointer):Void return ExtensionsNative.getProgramInfoLog(program, bufSize, length, in_foLog);
     static function getProgramInterfaceiv(program:Int, programInterface:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getProgramInterfaceiv(program, programInterface, pname, params);
     static function getProgramLocalParameterIivNV(target:Int, in_dex:Int, params:DataPointer):Void return ExtensionsNative.getProgramLocalParameterIivNV(target, in_dex, params);
     static function getProgramLocalParameterIuivNV(target:Int, in_dex:Int, params:DataPointer):Void return ExtensionsNative.getProgramLocalParameterIuivNV(target, in_dex, params);
@@ -6398,8 +6395,8 @@ class Extensions {
     * @see **`glGenProgramPipelines`**, **`glBindProgramPipeline`**, **`glDeleteProgramPipelines`**, **`glGetProgramPipeline`**
 
     **/
-    static function getProgramPipelineInfoLog(pipelin_e:Int, bufSize:Int, length:DataPointer, in_foLog:Pointer<Char>):Void return ExtensionsNative.getProgramPipelineInfoLog(pipelin_e, bufSize, length, in_foLog);
-    static function getProgramPipelineInfoLogEXT(pipelin_e:Int, bufSize:Int, length:DataPointer, in_foLog:Pointer<Char>):Void return ExtensionsNative.getProgramPipelineInfoLogEXT(pipelin_e, bufSize, length, in_foLog);
+    static function getProgramPipelineInfoLog(pipelin_e:Int, bufSize:Int, length:DataPointer, in_foLog:CharPointer):Void return ExtensionsNative.getProgramPipelineInfoLog(pipelin_e, bufSize, length, in_foLog);
+    static function getProgramPipelineInfoLogEXT(pipelin_e:Int, bufSize:Int, length:DataPointer, in_foLog:CharPointer):Void return ExtensionsNative.getProgramPipelineInfoLogEXT(pipelin_e, bufSize, length, in_foLog);
     static function getProgramPipelineiv(pipelin_e:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getProgramPipelineiv(pipelin_e, pname, params);
     static function getProgramPipelineivEXT(pipelin_e:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getProgramPipelineivEXT(pipelin_e, pname, params);
     /**
@@ -6563,7 +6560,7 @@ class Extensions {
     * @see **`glGetProgramResourceIndex`**, **`glGetProgramResource`**, **`glGetProgramResourceLocation`**, **`glGetProgramResourceLocationIndex`**.
 
     **/
-    static function getProgramResourceName(program:Int, programInterface:Int, in_dex:Int, bufSize:Int, length:DataPointer, name:Pointer<Char>):Void return ExtensionsNative.getProgramResourceName(program, programInterface, in_dex, bufSize, length, name);
+    static function getProgramResourceName(program:Int, programInterface:Int, in_dex:Int, bufSize:Int, length:DataPointer, name:CharPointer):Void return ExtensionsNative.getProgramResourceName(program, programInterface, in_dex, bufSize, length, name);
     static function getProgramResourcefvNV(program:Int, programInterface:Int, in_dex:Int, propCount:Int, props:DataPointer, count:Int, length:DataPointer, params:DataPointer):Void return ExtensionsNative.getProgramResourcefvNV(program, programInterface, in_dex, propCount, props, count, length, params);
     static function getProgramResourceiv(program:Int, programInterface:Int, in_dex:Int, propCount:Int, props:DataPointer, count:Int, length:DataPointer, params:DataPointer):Void return ExtensionsNative.getProgramResourceiv(program, programInterface, in_dex, propCount, props, count, length, params);
     static function getProgramStageiv(program:Int, shadertype:Int, pname:Int, values:DataPointer):Void return ExtensionsNative.getProgramStageiv(program, shadertype, pname, values);
@@ -6661,7 +6658,7 @@ class Extensions {
     * @see **`glCompileShader`**, **`glGetProgramInfoLog`**, **`glLinkProgram`**, **`glValidateProgram`**
 
     **/
-    static function getShaderInfoLog(shader:Int, bufSize:Int, length:DataPointer, in_foLog:Pointer<Char>):Void return ExtensionsNative.getShaderInfoLog(shader, bufSize, length, in_foLog);
+    static function getShaderInfoLog(shader:Int, bufSize:Int, length:DataPointer, in_foLog:CharPointer):Void return ExtensionsNative.getShaderInfoLog(shader, bufSize, length, in_foLog);
     /**
     * - #### Purpose:
     * retrieve the range and precision for numeric formats supported by the shader compiler
@@ -6711,8 +6708,8 @@ class Extensions {
     * @see **`glCreateShader`**, **`glShaderSource`**
 
     **/
-    static function getShaderSource(shader:Int, bufSize:Int, length:DataPointer, source:Pointer<Char>):Void return ExtensionsNative.getShaderSource(shader, bufSize, length, source);
-    static function getShaderSourceARB(obj:Int, maxLength:Int, length:DataPointer, source:Pointer<Char>):Void return ExtensionsNative.getShaderSourceARB(obj, maxLength, length, source);
+    static function getShaderSource(shader:Int, bufSize:Int, length:DataPointer, source:CharPointer):Void return ExtensionsNative.getShaderSource(shader, bufSize, length, source);
+    static function getShaderSourceARB(obj:Int, maxLength:Int, length:DataPointer, source:CharPointer):Void return ExtensionsNative.getShaderSourceARB(obj, maxLength, length, source);
     static function getShaderiv(shader:Int, pname:Int, params:DataPointer):Void return ExtensionsNative.getShaderiv(shader, pname, params);
     static function getShadingRateImagePaletteNV(viewport:Int, entry:Int, rate:DataPointer):Void return ExtensionsNative.getShadingRateImagePaletteNV(viewport, entry, rate);
     static function getShadingRateSampleLocationivNV(rate:Int, samples:Int, in_dex:Int, location:DataPointer):Void return ExtensionsNative.getShadingRateSampleLocationivNV(rate, samples, in_dex, location);
@@ -6975,13 +6972,13 @@ class Extensions {
     * @see **`glBeginTransformFeedback`**, **glEndTransformFeedback**, **`glTransformFeedbackVaryings`**, **`glGetProgram`**
 
     **/
-    static function getTransformFeedbackVarying(program:Int, in_dex:Int, bufSize:Int, length:DataPointer, size:DataPointer, type:DataPointer, name:Pointer<Char>):Void return ExtensionsNative.getTransformFeedbackVarying(program, in_dex, bufSize, length, size, type, name);
-    static function getTransformFeedbackVaryingEXT(program:Int, in_dex:Int, bufSize:Int, length:DataPointer, size:DataPointer, type:DataPointer, name:Pointer<Char>):Void return ExtensionsNative.getTransformFeedbackVaryingEXT(program, in_dex, bufSize, length, size, type, name);
+    static function getTransformFeedbackVarying(program:Int, in_dex:Int, bufSize:Int, length:DataPointer, size:DataPointer, type:DataPointer, name:CharPointer):Void return ExtensionsNative.getTransformFeedbackVarying(program, in_dex, bufSize, length, size, type, name);
+    static function getTransformFeedbackVaryingEXT(program:Int, in_dex:Int, bufSize:Int, length:DataPointer, size:DataPointer, type:DataPointer, name:CharPointer):Void return ExtensionsNative.getTransformFeedbackVaryingEXT(program, in_dex, bufSize, length, size, type, name);
     static function getTransformFeedbackVaryingNV(program:Int, in_dex:Int, location:DataPointer):Void return ExtensionsNative.getTransformFeedbackVaryingNV(program, in_dex, location);
     static function getTransformFeedbacki64_v(xfb:Int, pname:Int, in_dex:Int, param:DataPointer):Void return ExtensionsNative.getTransformFeedbacki64_v(xfb, pname, in_dex, param);
     static function getTransformFeedbacki_v(xfb:Int, pname:Int, in_dex:Int, param:DataPointer):Void return ExtensionsNative.getTransformFeedbacki_v(xfb, pname, in_dex, param);
     static function getTransformFeedbackiv(xfb:Int, pname:Int, param:DataPointer):Void return ExtensionsNative.getTransformFeedbackiv(xfb, pname, param);
-    static function getTranslatedShaderSourceANGLE(shader:Int, bufSize:Int, length:DataPointer, source:Pointer<Char>):Void return ExtensionsNative.getTranslatedShaderSourceANGLE(shader, bufSize, length, source);
+    static function getTranslatedShaderSourceANGLE(shader:Int, bufSize:Int, length:DataPointer, source:CharPointer):Void return ExtensionsNative.getTranslatedShaderSourceANGLE(shader, bufSize, length, source);
     /**
     * - #### Purpose:
     * retrieve the index of a named uniform block
