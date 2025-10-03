@@ -191,7 +191,7 @@ DEFGL(void, ClearBufferData, (GLenum, GLenum, GLenum, GLenum, const void *), (in
 DEFGL(void, ClearBufferSubData, (GLenum, GLenum, GLintptr, GLsizeiptr, GLenum, GLenum, const void *), (int target, int internalformat, int offset, int size, int format, int type, double data), (target, internalformat, offset, size, format, type, (void *)(uintptr_t)data))
 DEFGL(void, ClearBufferfi, (GLenum, GLint, GLfloat, GLint), (int buffer, int drawbuffer, float depth, int stencil), (buffer, drawbuffer, depth, stencil))
 DEFGL(void, ClearBufferfv, (GLenum, GLint, const GLfloat *), (int buffer, int drawbuffer, double value), (buffer, drawbuffer, (GLfloat *)(uintptr_t)value))
-// DEFGL(void, ClearBufferiv, (GLenum, GLint, const GLint *), (int buffer, int drawbuffer, double value), (buffer, drawbuffer, (GLint *)(uintptr_t)value))
+DEFGL(void, ClearBufferiv, (GLenum, GLint, const GLint *), (int buffer, int drawbuffer, double value), (buffer, drawbuffer, (GLint *)(uintptr_t)value))
 DEFGL(void, ClearBufferuiv, (GLenum, GLint, const GLuint *), (int buffer, int drawbuffer, double value), (buffer, drawbuffer, (GLuint *)(uintptr_t)value))
 DEFGL(void, ClearColor, (GLfloat, GLfloat, GLfloat, GLfloat), (float red, float green, float blue, float alpha), (red, green, blue, alpha))
 DEFGL(void, ClearColorIiEXT, (GLint, GLint, GLint, GLint), (int red, int green, int blue, int alpha), (red, green, blue, alpha))
