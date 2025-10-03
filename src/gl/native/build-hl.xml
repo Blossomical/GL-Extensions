@@ -27,8 +27,8 @@
         <compilerflag value="-I${HASHLINK}/include" />
     </files>
 
-    <target id="default" output="glExtensions_" toolid="dll" tool="linker">
-        <files id="glExtensions_" />
+    <target id="default" output="glExtensions" toolid="dll" tool="linker">
+        <files id="glExtensions__" />
         <libpath name="${HASHLINK}" if="windows" />
         <libpath name="/usr/local/lib" if='macos' />
         <lib name="libhl.lib" if="windows" />
