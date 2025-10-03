@@ -296,7 +296,7 @@ extern class ExtensionsNative {
 	#if hl @:hlNative("glExtensions", "ClearBufferSubData") #else @:native("glExtensions__ClearBufferSubData") #end public static function clearBufferSubData(target:Int, in_ternalformat:Int, offset:Int, size:Int, format:Int, type:Int, data:DataPointer):Void;
 	#if hl @:hlNative("glExtensions", "ClearBufferfi") #else @:native("glExtensions__ClearBufferfi") #end public static function clearBufferfi(buffer:Int, drawbuffer:Int, depth:Float, stencil:Int):Void;
 	#if hl @:hlNative("glExtensions", "ClearBufferfv") #else @:native("glExtensions__ClearBufferfv") #end public static function clearBufferfv(buffer:Int, drawbuffer:Int, value:DataPointer):Void;
-	#if hl @:hlNative("glExtensions", "ClearBufferiv") #else @:native("glExtensions__ClearBufferiv") #end public static function clearBufferiv(buffer:Int, drawbuffer:Int, value:DataPointer):Void;
+	#if hl @:hlNative("glExtensions", "ClearBufferiv") #else @:native("glExtensions__ClearBufferfv") #end public static function clearBufferiv(buffer:Int, drawbuffer:Int, value:DataPointer):Void;
 	#if hl @:hlNative("glExtensions", "ClearBufferuiv") #else @:native("glExtensions__ClearBufferuiv") #end public static function clearBufferuiv(buffer:Int, drawbuffer:Int, value:DataPointer):Void;
 	#if hl @:hlNative("glExtensions", "ClearColor") #else @:native("glExtensions__ClearColor") #end public static function clearColor(red:Float, green:Float, blue:Float, alpha:Float):Void;
 	#if hl @:hlNative("glExtensions", "ClearColorIiEXT") #else @:native("glExtensions__ClearColorIiEXT") #end public static function clearColorIiEXT(red:Int, green:Int, blue:Int, alpha:Int):Void;

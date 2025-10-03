@@ -232,10 +232,3 @@ static void *getProc(const char *name)
         return (type)gl##name callArgs;                                       \
     }
 #endif
-
-typedef void(__stdcall *ClearBufferiv__TYPEDEF)(GLenum, GLint, const GLint *);
-void glExtensions_ClearBufferiv(int buffer, int drawbuffer, double value)
-{
-    ClearBufferiv__TYPEDEF glClearBufferiv = (ClearBufferiv__TYPEDEF)getProc("glClearBufferiv");
-    return (void)glClearBufferiv(buffer, drawbuffer, (GLint *)(uintptr_t)value);
-}
