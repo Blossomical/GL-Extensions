@@ -200,7 +200,7 @@ static void *getProc(const char *name)
 
 #undef HL_NAME
 #define STRFY(x) #x
-#define HL_NAME(n) glExtensions__##n
+#define HL_NAME(n) glExtensions_##n
 #if defined(__APPLE__)
 
 #define DEFGL(type, name, glArgs, funcArgs, callArgs) \
